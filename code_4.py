@@ -26,7 +26,7 @@ def get_the_cheapest_big_mac_price_by_year(year):
         mean_price = round(float(r['dollar_price']))
         results.append((country_name ,country_code, mean_price))
     min_price_tuple = min(results, key=lambda x: x[2])
-    return min_price_tuple
+    return f"{min_price_tuple[0]}({min_price_tuple[1].upper()}): ${min_price_tuple[2]}"
 
 def get_the_most_expensive_big_mac_price_by_year(year):
     results = []
@@ -37,7 +37,7 @@ def get_the_most_expensive_big_mac_price_by_year(year):
         mean_price = round(float(r['dollar_price']))
         results.append((country_name ,country_code, mean_price))
     max_price_tuple = max(results, key=lambda x: x[2])
-    return max_price_tuple
+    return f"{max_price_tuple[0]}({max_price_tuple[1].upper()}): ${max_price_tuple[2]}"
 
 if __name__ == "__main__":
     year = 'date'
